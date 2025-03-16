@@ -1,183 +1,192 @@
-# How-to-install-BlackArch-in-USB-with-persistance
+## Requirements
 
-## Requisitos
+To install BlackArch on a USB with persistence, we need the following:
 
-Para instalar BlackArch en USB con persistencia necesitamos tener lo siguiente:
-
->[!Note] Requesitos 
->- Necesitamos **2 USB**, uno para instalar la ISO, y otro para instalar Blackarch dentro de el con persistencia, es decir, con el que iniciaremos Blackarch cada vez que lo enchufemos en el portail/ordenador correspondiente. 
->	 - USB mínimo 8GB para instalar la [ISO slim](https://ftp.halifax.rwth-aachen.de/blackarch/iso/blackarch-linux-slim-2023.05.01-x86_64.iso)
->     - USB **+100 GB**, **Imprescindible**, en otro caso la instalación peta. Recomendable que el USB sea 3.0 para que blackarch funcione de manera óptima
->	![images/IMG_0441.png|286]
-
+>[!Note] Requirements 
+>- We need **2 USB drives**: one to install the ISO, and another to install BlackArch with persistence, which means it will boot BlackArch every time we plug it into the corresponding laptop/PC. 
+>    - Minimum 8GB USB to install the [slim ISO](https://ftp.halifax.rwth-aachen.de/blackarch/iso/blackarch-linux-slim-2023.05.01-x86_64.iso)
+>    - USB **+100 GB**, **essential**; otherwise, the installation will fail. It's recommended that the USB be 3.0 for optimal performance.
+>      
+>   <img src="images/IMG_0441.png" width="286">
 
 
-## Instalación
-Primero instalamos el **iso** en el siguiente enlace:
+
+## Installation
+First, we download the **ISO** from the following link:
 
 > [Install BlackArch iso](https://www.blackarch.org/downloads.html)
 
-![[Pasted image 20250313090731-1.png|790]]
+<img src="images/Pasted image 20250313090731-1.png" width="790">
 
-Para la instalación en el USB tenemos que instalar un software como _BalenaEtcher_ o _Rufus_, preferiblemente rufus que es el voy a estar usando durante la instalación:
+To install it on the USB, we need to use software like _BalenaEtcher_ or _Rufus_. Preferably Rufus, as that is what I will use for the installation:
 
-> [Install Rufus](https://rufus.ie/es/)
+> [Install Rufus](https://rufus.ie/en/)
 
-Cuando tengamos rufus en nuestro equipo y la iso instalada, abrimos rufus, seleccionamos el USB correspondiente, seleccionamos la iso de blackarch recientemente instalada y le damos a _Start_.
-> [!info] Nota 
-> - Aunque en la instalación aparezca un USB de 64GB, usé uno de 128GB posteriormente al tener problemas con la instalación
+Once we have Rufus installed on our computer and the ISO downloaded, open Rufus, select the corresponding USB, select the recently downloaded BlackArch ISO, and click _Start_.
+> [!info] Note 
+> - Although the installation shows a 64GB USB, I eventually used a 128GB one due to installation issues.
 
-![[Pasted image 20250313093740-1.png|419]]
-Aquí, importante seleccionar el modo de escritura **DD Image mode** ya que sino adelante que con el modo ISO no podremos completar la instalación
+<img src="images/Pasted image 20250313093740-1.png" width="419">
 
-![[Pasted image 20250313093814-1.png|445]]
-De nuevo, asegurarse de habéis seleccionado bien el USB ya que como dice el Warning todos los ficheros del USB seleccionado serán borrados 
-![[Pasted image 20250313093837-1.png|505]]
-Cuando este listo, cerramos y hacemos lo siguiente
-![[../ANEXOS/Pasted image 20250313094910-1.png|447]]
+Here, it is important to select the **DD Image mode** writing mode; otherwise, the installation won't proceed correctly using the ISO mode.
 
-Con el USB aún enchufado ponemos **reiniciamos** el ordenador y cuando se este encendiendo de nuevo, dependiendo del tipo o modelo de bios del ordenador/portatil hay que pulsar  las teclas **F2** ,**F11**, **F10**, **DEL**, **ESC** que suelen ser las más comunes para entrar en la BIOS, de todas formas dejo un mini cheet sheet:
+<img src="images/Pasted image 20250313093814-1.png" width="445">
+Again, ensure you have selected the correct USB since, as the warning mentions, all files on the selected USB will be erased. 
+
+<img src="images/Pasted image 20250313093837-1.png" width="505">
+Once ready, close it and proceed as follows:
+
+<img src="images/Pasted image 20250313094910-1.png" width="447">
+
+
+With the USB still plugged in, **restart** the computer, and as it powers back on, depending on the type or model of the BIOS in your laptop/PC, press **F2**, **F11**, **F10**, **DEL**, or **ESC**—the most common keys for accessing the BIOS. Here's a mini cheat sheet for reference:
 > - Acer: F2
 > - ASUS: F2
 > - Dell: F2
-> - HP F10
+> - HP: F10
 > - Lenovo: F2 or Fn+F2
 > - MSI: Del
 > - Samsung: F2
-> - Toshiba F2
+> - Toshiba: F2
 
+Next, go to **Boot Manager** and select the USB.
 
-Después nos tenemos que ir a **Boot Manager** y seleccionamos el USB
-![[IMG_0445(1).png|577]]
+<img src="images/IMG_0445(1).png" width="577">
 
-![[../ANEXOS/IMG_0395.png|467]]
+<img src="images/IMG_0395.png" width="467">
 
+Once selected, choose the second option, and the installer will start.
 
-Una vez seleccioando, aquí seleccionamos la segunda opción y se iniciará el instalador
-![[../ANEXOS/IMG_0396.png|790]]
+<img src="images/IMG_0396.png" width="790">
 
-Una vez Dentro **SIN DESENCHUFAR EL USB**, conectamos el otro USB en el donde se instalará BlackArch e iniciamos sesión.
->[!Note] Credenciales 
->Login : liveuser  
- Password : blackarch
+Once inside, **DO NOT UNPLUG THE USB**, connect the other USB where BlackArch will be installed and log in.
+>[!Note] Credentials  
+>Login: liveuser  
+>Password: blackarch
 
-![[../ANEXOS/IMG_0397.png|759]]
+<img src="images/IMG_0397.png" width="759">
 
-Después de logearse tenemos que tener en cueta que:
-- importante **NO iniciar la instalación desde el instalador del escritorio** ya que es posible que tengamos problemas tendremos problemas.
-![[Pasted image 20250316092517-1.png|705]]
-- **No conectarte a una red WI-FI con Internet** ya que surgirán errores con **pacman** durante la instalación y la instalación fallará. **Los errores con pacman se solucionan más adelante**.
-- **Tener enchufado el ordenador durante la instalación** ya que el proceso puedo durar **MÁS DE 2 HORAS!!!!**.
+After logging in, please consider the following:
+- **DO NOT start the installation from the desktop installer**, as it may cause issues during installation.
+- **DO NOT connect to a Wi-Fi network with Internet access**, as errors with **pacman** might occur during installation. These errors will be resolved later.
+- **Keep the laptop plugged into power during installation**, as the process may take **MORE THAN 2 HOURS**.
 
-Para la instalación vamos a la terminal y ejecutamos calamares installer con `sudo`.
-![[Pasted image 20250316092432-1.png|504]]
+For the installation, open a terminal and run the Calamares Installer with `sudo`.
 
-Después se abrirá el installer, Nos saltará un Warning de que no estamos conectados a Internet pero **no hay problema**, seleccionamos el idioma y continuamos.
-![[Pasted image 20250316091721-1.png|730]]
+<img src="images/Pasted image 20250316092432-1.png" width="504">
 
-Seguidamente, seleccionamos nuestra localización sea cual sea.
+The installer will open. You might see a message stating that you're not connected to the Internet, but **that's okay**. Select your language and continue.
 
-![[../ANEXOS/IMG_0399-1.png|626]]
-Terminando, seleccionamos nuestra configuración de teclado preferida:
-![[IMG_0400.png|690]]
+<img src="images/Pasted image 20250316091721-1.png" width="730">
 
+Next, select your location, whichever it may be.
+<img src="images/IMG_0399-1.png" width="626">
 
-> [!Warning] Aviso 
-> No seleccionar esta opción. Esta opción hará el proceso de instalación de manera automática pero al parecer esta "deprecated" y la instalación se quedará estancada en el 4%
-![[Pasted image 20250316092257-1.png|850]]
+Finally, choose your preferred keyboard layout:
 
-Tras completar la configuración, llega el momento de la instalación. Aquí seleccionamos el USB donde se va a instalar BlackArch, **hay que asegurarse de que el disco seleccionado es el USB** ya que el disco de nuestro portail/ordenador esta seleccionado, **se eliminaran todos sus datos**.
+<img src="images/IMG_0400.png" width="690">
 
-Después, seleccionamos "Manual partitioning".
+> [!Warning] Warning  
+> Do not select this option. This option will automate the installation process, but it appears to be "deprecated," and the installation will get stuck at 4%.
+> 
+<img src="images/Pasted image 20250316092257-1.png" width="850">
 
-![[Pasted image 20250316092632-1.png|782]]
-Creamos una nueva partición.
+After completing the configuration, it's time to install. Here, select the USB where BlackArch will be installed. **It's crucial to ensure the selected disk is the USB**, as selecting your laptop's/PC's disk will erase all its data.
 
-![[Pasted image 20250316092655-1.png|850]]
+Next, select "Manual partitioning."
 
-Seleccionamos "GUID Partition Table (GPT)".
-![[Pasted image 20250316092708-1.png|470]]
-Después seleccionamos "Free Space" y le damos a create.
+<img src="images/Pasted image 20250316092632-1.png" width="782">
 
-![[Pasted image 20250316092734-1.png|661]]
+Create a new partition.
 
-La primera partición es para el "boot", por lo que tiene que tener:
-- Size -> 500MB 
-- File System -> fat32 
-- Mount Point -> /boot/efi 
-- Flags -> boot
-![[Pasted image 20250316092756-1.png|690]]
-Después, seleccionamos el espacio restante y le damos a create.
-![[Pasted image 20250316092910-1.png|645]]
-En este espacio restante se instalará BlackArch por lo que debemos seleccionar: 
-- Size -> The rest 
-- File System -> ext4 
-- Mount Point -> /
-- Flags -> root
+<img src="images/Pasted image 20250316092655-1.png" width="850">
 
-![[Pasted image 20250316092820-1.png|723]]
+Choose "GUID Partition Table (GPT)."
 
+<img src="images/Pasted image 20250316092708-1.png" width="470">
 
-Cuando las particiones estén creadas, le damos a siguiente y en esta pantalla se nos mostrará el resumen de las particiones.
+Then select "Free Space" and click "Create."
 
-![[Pasted image 20250316092952-1.png|775]]
+<img src="images/Pasted image 20250316092734-1.png" width="661">
 
-Aquí hay que asegurarse de nuevo que todo está como lo configuramos y le damos a instalar. 
+The first partition is for "boot," so it should have the following configuration:
+- Size -> 500MB  
+- File System -> fat32  
+- Mount Point -> /boot/efi  
+- Flags -> boot  
 
-Ahora simplemente debemos esperar. La instalación normalmente toma 2 horas. Hay momentos en los que se quede atascada durante un tiempo, especialmente en el 71% donde se instala el bootloader.
-![[IMG_0427.png|762]]
-Una vez Instalado, seleccionamos la casilla "Restart now" y le damos a Done, cuando se este reiniciando, hacemos el mismo proceso que antes y pulsamos la tecla correspondiente para entrar en la BIOS.
+<img src="images/Pasted image 20250316092756-1.png" width="690">
 
-![[IMG_0428.png|528]]
+Then, select the remaining space and click "Create."
 
-![[IMG_0446(1).png|538]]
+<img src="images/Pasted image 20250316092910-1.png" width="645">
 
-Cuando cargue, seleccionamos BlackArch en el GRUB e iniciamos sesión con las credenciales que configuramos anteriormente.
+This remaining space will be used to install BlackArch. Configure it as follows:  
+- Size -> The rest of the space  
+- File System -> ext4  
+- Mount Point -> /  
+- Flags -> root  
 
-![[IMG_0447.png|602]]
+<img src="images/Pasted image 20250316092820-1.png" width="723">
 
-Ahora si intentamos usar pacman para actualizar los repositorios o instalar software nos saldrá el siguiente error:
-![[IMG_0431.png|691]]
+Once the partitions are created, click "Next." This screen will display a summary of the partitions.
 
-Esto es por que el 1 de Marzo de 2025 hubo una migración en git de los repositorios de Arch y tenemos que cambiar lo siguiente para que funcione. Más info en ->  https://archlinux.org/news/cleaning-up-old-repositories/.
+<img src="images/Pasted image 20250316092952-1.png" width="775">
 
-En _/etc/pacman.conf_ debemos comentar "**[community]**" y la línea posterior, es decir, "**Include = /etc/pacman.d/mirrorlist**".
+Again, make sure everything is configured correctly and click "Install."  
 
+Now, simply wait. The installation typically takes 2 hours. There might be moments where it seems stuck, particularly at 71% when installing the bootloader.
 
+<img src="images/IMG_0427.png" width="762">
 
-![[IMG_0432.png|699]]
+Once installed, check "Restart now" and click "Done." While restarting, repeat the previous process and press the appropriate key to access the BIOS.
 
-![[IMG_0433.png|570]]
+<img src="images/IMG_0428.png" width="528">
 
-![[IMG_0436.png|660]]
+<img src="images/IMG_0446(1).png" width="538">
 
+When it boots, select BlackArch in the GRUB menu and log in with the credentials you set earlier.
 
-Si aún tenéis problemas, deberéis editar el _/etc/pacman.d/mirrorlist_ de la siguiente forma: 
+<img src="images/IMG_0447.png" width="602">
 
-![[IMG_0440.png|686]]
+Now, if you try to use `pacman` to update the repositories or install software, you'll encounter the following error:
 
+<img src="images/IMG_0431.png" width="691">
 
-Después de comentar esas líneas, veremos que podremos actualizar los paquetes
+This is because on March 1, 2025, there was a migration in Arch's git repositories. You need to make the following changes for it to work. More information here -> [Arch Linux News](https://archlinux.org/news/cleaning-up-old-repositories/).
 
-![[IMG_0437.png|775]]
+In _/etc/pacman.conf_, comment out "**[community]**" and the line that follows it: "**Include = /etc/pacman.d/mirrorlist**".
 
-Ya tenemos instalado BlackArch en USB con persistencia. Enjoy.
-![[IMG_0439.png|735]]
+<img src="images/IMG_0432.png" width="699">
 
+<img src="images/IMG_0433.png" width="570">
 
+<img src="images/IMG_0436.png" width="660">
 
+If you still encounter issues, you need to edit _/etc/pacman.d/mirrorlist_ as follows:
 
+<img src="images/IMG_0440.png" width="686">
 
-## ¿Por que no hacemos la instalación conectados a Internet?
-Si estamos conectados a Internet, durante la instalación de hará automáticamente una actualización de paquetes usando `pacman`, el problema es que en este caso pacman esta "deprecated" debido a la migración  en git de los repositorios antiguos de Arch. Por ello, es mejor hacer la instalación sin conexión a Internet, y luego, arreglar el problema de `pacman`. 
-> Ver https://archlinux.org/news/cleaning-up-old-repositories/ para más información.
+After commenting out those lines, you should be able to update the packages:
 
+<img src="images/IMG_0437.png" width="775">
 
+BlackArch is now installed on a USB with persistence. Enjoy!
+
+<img src="images/IMG_0439.png" width="735">
 
 
 
-## ¿Por que no hacemos la instalación con la opción "Erase disk"?
-Si lo hacemos con esta opción, la instalación se quedará estancada en el 4% cuando este creando la partición para root, por ello siempre es mejor hacerlo de forma manual.
-![[Pasted image 20250316092257-1.png|850]]
+## Why don't we install with Internet access?
+If we are connected to the Internet, the installation will automatically update packages using `pacman`. The issue is that `pacman` is "deprecated" in this case due to the migration in Arch's old git repositories. Therefore, it's better to install without an Internet connection and fix the `pacman` issue afterward.  
+> More information here: [Arch Linux News](https://archlinux.org/news/cleaning-up-old-repositories/).
 
-![[Pasted image 20250316150401-1.png]]
+
+
+## Why don't we install using the "Erase disk" option?
+If we use this option, the installation will get stuck at 4% when creating the root partition. For this reason, it's always better to do it manually.
+
+<img src="images/Pasted image 20250316092257-1.png" width="850">
+
+<img src="images/Pasted image 20250316150401-1.png" width="850">
+
