@@ -1,3 +1,11 @@
+## Index
+
+1. [Requirements](#requirements)
+2. [Installation](#installation)
+3. [Why don't we install with Internet access?](#why-dont-we-install-with-internet-access)
+4. [Why don't we install using the "Erase disk" option?](#why-dont-we-install-using-the-erase-disk-option)
+
+
 ## Requirements
 
 To install BlackArch on a USB with persistence, we need the following:
