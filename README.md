@@ -8,7 +8,7 @@ Para instalar BlackArch en USB con persistencia necesitamos tener lo siguiente:
 >- Necesitamos **2 USB**, uno para instalar la ISO, y otro para instalar Blackarch dentro de el con persistencia, es decir, con el que iniciaremos Blackarch cada vez que lo enchufemos en el portail/ordenador correspondiente. 
 >	 - USB mínimo 8GB para instalar la [ISO slim](https://ftp.halifax.rwth-aachen.de/blackarch/iso/blackarch-linux-slim-2023.05.01-x86_64.iso)
 >     - USB **+100 GB**, **Imprescindible**, en otro caso la instalación peta. Recomendable que el USB sea 3.0 para que blackarch funcione de manera óptima
->	![[images/IMG_0441.png|286]]
+>	![images/IMG_0441.png|286]
 
 
 
